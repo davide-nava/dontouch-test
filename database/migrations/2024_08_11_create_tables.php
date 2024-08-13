@@ -33,13 +33,14 @@ return new class extends Migration {
         });
 
         Schema::create('profile_attributes', function (Blueprint $table) {
-            $table->foreignId('profile_id')->constrained('profiles');
+            $table->id();
+            $table->unsignedBigInteger('profile_id');
             $table->string('attribute');
             $table->dateTime('data_di_creazione');
             $table->dateTime('data_di_modifica');
             $table->softDeletes('deleted_at', precision: 0);
             $table->unique(['profile_id', 'attribute']);
-            $table->primary(['profile_id', 'attribute']);
+            $table->foreignId('profile_id')->references('id')->on('profiles');
         });
     }
 

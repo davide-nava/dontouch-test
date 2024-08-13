@@ -4,13 +4,13 @@ namespace App\Repositories;
 
 interface ProfileAttributeRepositoryInterface
 {
-    public function delete($profile_id, $attribute);
+    public function delete($id);
 
-    public function find($profile_id, $attribute);
+    public function find($id);
 
     public function all();
 
-    public function create(array $data);
+    public function create($data);
 
-    public function update(array $data);
+    public function update($data);
 }

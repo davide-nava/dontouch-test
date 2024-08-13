@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\AccessOperationEvent;
 use App\Services\ProfileService;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use App\Events\AccessOperationEvent;
 use Illuminate\Routing\Controller;
-use OpenApi\Attributes as OA;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Event;
-use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
 {

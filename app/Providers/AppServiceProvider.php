@@ -2,16 +2,16 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use App\Services\UserService;
-use App\Services\ProfileService;
-use App\Services\ProfileAttributeService;
-use App\Repositories\UserRepository;
-use App\Repositories\ProfileRepository;
 use App\Repositories\ProfileAttributeRepository;
-use App\Repositories\UserRepositoryInterface;
-use App\Repositories\ProfileRepositoryInterface;
 use App\Repositories\ProfileAttributeRepositoryInterface;
+use App\Repositories\ProfileRepository;
+use App\Repositories\ProfileRepositoryInterface;
+use App\Repositories\UserRepository;
+use App\Repositories\UserRepositoryInterface;
+use App\Services\ProfileAttributeService;
+use App\Services\ProfileService;
+use App\Services\UserService;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

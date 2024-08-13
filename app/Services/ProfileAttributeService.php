@@ -10,19 +10,19 @@ class ProfileAttributeService implements ProfileAttributeRepositoryInterface
     {
     }
 
-    public function create(array $data)
+    public function create(  $data)
     {
         return $this->profileAttributeRepository->create($data);
     }
 
-    public function update(array $data)
+    public function update(  $data)
     {
         return $this->profileAttributeRepository->update($data);
     }
 
-    public function delete($profile_id, $attribute)
+    public function delete($id)
     {
-        return $this->profileAttributeRepository->delete($profile_id, $attribute);
+        return $this->profileAttributeRepository->delete($id);
     }
 
     public function all()
@@ -30,8 +30,8 @@ class ProfileAttributeService implements ProfileAttributeRepositoryInterface
         return $this->profileAttributeRepository->all();
     }
 
-    public function find($profile_id, $attribute)
+    public function find($id)
     {
-        return $this->profileAttributeRepository->find($profile_id, $attribute);
+        return $this->profileAttributeRepository->find($id);
     }
 }

@@ -4,12 +4,10 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
-use Symfony\Component\HttpFoundation\Response;
+use Monolog\Handler\StreamHandler;
 use Monolog\Level;
 use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
+use Symfony\Component\HttpFoundation\Response;
 
 class AccessOperation
 {
@@ -18,7 +16,7 @@ class AccessOperation
         $log = new Logger('AccessOperation');
         $log->pushHandler(new StreamHandler(__DIR__ . '/../../app/storage/logs/access.log'));
 
-        $log->info($request->fullUrlWithQuery);
+        $log->info($request->url());
 
         return $next($request);
     }

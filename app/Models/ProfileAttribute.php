@@ -2,19 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Auth\Authenticatable;
-use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Lumen\Auth\Authorizable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProfileAttribute extends Model
 {
 
     protected $table = 'profile_attributes';
-    protected $primaryKey = ['profile_id', 'attribute'];
+    protected $primaryKey = 'id';
+    public $incrementing = true;
 
     use SoftDeletes;
 
@@ -26,6 +22,7 @@ class ProfileAttribute extends Model
      * @var string[]
      */
     protected $fillable = [
+        'id',
         'profile_id',
         'attribute',
         'data_di_creazione',
@@ -42,8 +39,4 @@ class ProfileAttribute extends Model
         'deleted_at',
     ];
 
-    public function profile()
-    {
-        return $this->belongsTo(Profile::class, 'id');
-    }
 }

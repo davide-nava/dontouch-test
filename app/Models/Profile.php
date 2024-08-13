@@ -4,9 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Laravel\Lumen\Auth\Authorizable;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\ProfileAttribute;
 
 class Profile extends Model
 {
@@ -49,6 +47,6 @@ class Profile extends Model
 
     public function attributes(): HasMany
     {
-        return $this->hasMany(ProfileAttribute::class);
+        return $this->hasMany(ProfileAttribute::class, 'profile_id', 'id');
     }
 }

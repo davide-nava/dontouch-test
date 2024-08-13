@@ -11,26 +11,26 @@ class ProfileAttributeRepository implements ProfileAttributeRepositoryInterface
         return ProfileAttribute::withTrashed()->get();
     }
 
-    public function create(array $data)
+    public function create($data)
     {
         return ProfileAttribute::create($data);
     }
 
-    public function update(array $data)
+    public function update($data)
     {
-        $profileAttribute = ProfileAttribute::where('profile_id', $data['profile_id'])->where('attribute', $data['attribute'])->firstOrFail();
+        $profileAttribute = ProfileAttribute::findOrFail($data["id"]);
         $profileAttribute->update($data);
         return $profileAttribute;
     }
 
-    public function delete($profile_id, $attribute)
+    public function delete($id)
     {
-        $profileAttribute = ProfileAttribute::where('profile_id', $profile_id)->where('attribute', $attribute)->withTrashed()->firstOrFail();
+        $profileAttribute = ProfileAttribute::withTrashed()->findOrFail($id);
         $profileAttribute->softDeletes();
     }
 
-    public function find($profile_id, $attribute)
+    public function find($id)
     {
-        return ProfileAttribute::where('profile_id', $profile_id)->where('attribute', $attribute)->withTrashed()->firstOrFail();
+        return ProfileAttribute::withTrashed()->findOrFail($id);
     }
 }

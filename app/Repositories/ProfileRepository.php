@@ -11,13 +11,13 @@ class ProfileRepository implements ProfileRepositoryInterface
         return Profile::withTrashed()->get();
     }
 
-    public function create(array $data)
+    public function create($data)
     {
 
         return Profile::create($data);
     }
 
-    public function update(array $data)
+    public function update($data)
     {
         $profile = Profile::findOrFail($data['id']);
         $profile->update($data);

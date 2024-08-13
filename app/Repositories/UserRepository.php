@@ -11,12 +11,12 @@ class UserRepository implements UserRepositoryInterface
         return User::all();
     }
 
-    public function create(array $data)
+    public function create(  $data)
     {
         return User::create($data);
     }
 
-    public function update(array $data)
+    public function update(  $data)
     {
         $user = User::findOrFail($data['id']);
         $user->update($data);

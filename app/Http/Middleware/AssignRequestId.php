@@ -12,7 +12,7 @@ class AssignRequestId
 {
     public function handle(Request $request, Closure $next): Response
     {
-        $requestId = (string) Str::uuid();
+        $requestId = (string)Str::uuid();
 
         Log::shareContext([
             'request-id' => $requestId,

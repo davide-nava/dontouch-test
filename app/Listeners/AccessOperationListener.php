@@ -3,9 +3,9 @@
 namespace App\Listeners;
 
 use App\Events\AccessOperationEvent;
-use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Level;
+use Monolog\Logger;
 
 class AccessOperationListener
 {
@@ -22,7 +22,7 @@ class AccessOperationListener
     /**
      * Handle the event.
      *
-     * @param  \App\Events\AccessOperationEvent  $event
+     * @param \App\Events\AccessOperationEvent $event
      * @return void
      */
     public function handle(AccessOperationEvent $event)
