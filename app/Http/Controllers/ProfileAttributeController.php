@@ -21,8 +21,9 @@ class ProfileAttributeController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/resource.json",
-     *     @OA\Response(response="200", description="An example resource")
+     *     path="/api/profile-attribute",
+     *     summary="Delete profile",
+     *     @OA\Response(response="200", description="Ok")
      *     @OA\Response(response="404", description="Not Found")
      *     @OA\Response(response="500", description="Error message")
      * )
@@ -43,12 +44,22 @@ class ProfileAttributeController extends Controller
         }
     }
 
+    /**
+     * @OA\Get(
+     *     path="/api/profile-attribute/{id}/",
+     *     summary="Get profile",
+     *     @OA\Response(response="200", description="Ok")
+     *     @OA\Response(response="400", description="Bad Request")
+     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="500", description="Error message")
+     * )
+     */
     public function read(int $id)
     {
         try {
             Event::dispatch(new AccessOperationEvent('ProfileAttributeController@read'));
 
-            Log::debug('Reading profile attribute with id: {id}', ['id' => $id]);
+            Log::debug('Reading profile attribute with id: {id} ', ['id' => $id]);
 
             if ($id == null || $id <= 0) {
                 return response()->json(['message' => 'Bad Request', 'data' => null], 400);
@@ -77,6 +88,16 @@ class ProfileAttributeController extends Controller
         return $data;
     }
 
+    /**
+     * @OA\Post(
+     *     path="/api/profile-attribute/{id}",
+     *     summary="Create profile",
+     *     @OA\Response(response="200", description="Ok")
+     *     @OA\Response(response="400", description="Bad Request")
+     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="500", description="Error message")
+     * )
+     */
     public function create(Request $request)
     {
         try {
@@ -108,6 +129,16 @@ class ProfileAttributeController extends Controller
         }
     }
 
+    /**
+     * @OA\Put(
+     *     path="/api/profile-attribute/{id}",
+     *     summary="Update profile",
+     *     @OA\Response(response="200", description="Ok")
+     *     @OA\Response(response="400", description="Bad Request")
+     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="500", description="Error message")
+     * )
+     */
     public function update(Request $request)
     {
         try {
@@ -147,6 +178,16 @@ class ProfileAttributeController extends Controller
         }
     }
 
+    /**
+     * @OA\Delete(
+     *     path="/api/profile-attribute/{id}",
+     *     summary="Delete profile",
+     *     @OA\Response(response="200", description="Ok")
+     *     @OA\Response(response="400", description="Bad Request")
+     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="500", description="Error message")
+     * )
+     */
     public function delete($id)
     {
         try {

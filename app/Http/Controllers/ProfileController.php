@@ -20,6 +20,15 @@ class ProfileController extends Controller
     {
     }
 
+    /**
+     * @OA\Get(
+     *     path="/api/profile",
+     *     summary="Gel all profiles",
+     *     @OA\Response(response="200", description="Ok")
+     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="500", description="Error message")
+     * )
+     */
     public function readAll()
     {
         try {
@@ -38,6 +47,16 @@ class ProfileController extends Controller
         }
     }
 
+    /**
+     * @OA\Get(
+     *     path="/api/profile/{id}",
+     *     summary="Gel profile",
+     *     @OA\Response(response="200", description="Ok")
+     *     @OA\Response(response="400", description="Bad Request")
+     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="500", description="Error message")
+     * )
+     */
     public function read(int $id)
     {
         try {
@@ -62,6 +81,16 @@ class ProfileController extends Controller
         }
     }
 
+    /**
+     * @OA\Post(
+     *     path="/api/profile",
+     *     summary="Create profile",
+     *     @OA\Response(response="200", description="Ok")
+     *     @OA\Response(response="400", description="Bad Request")
+     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="500", description="Error message")
+     * )
+     */
     public function create(Request $request)
     {
         try {
@@ -106,6 +135,16 @@ class ProfileController extends Controller
         return $data;
     }
 
+    /**
+     * @OA\Put(
+     *     path="/api/profile/{id}",
+     *     summary="Update profile",
+     *     @OA\Response(response="200", description="Ok")
+     *     @OA\Response(response="400", description="Bad Request")
+     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="500", description="Error message")
+     * )
+     */
     public function update(Request $request)
     {
         try {
@@ -148,6 +187,16 @@ class ProfileController extends Controller
         }
     }
 
+    /**
+     * @OA\Delete(
+     *     path="/api/profile/{id}",
+     *     summary="Delete profile",
+     *     @OA\Response(response="200", description="Ok")
+     *     @OA\Response(response="400", description="Bad Request")
+     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="500", description="Error message")
+     * )
+     */
     public function delete($id)
     {
         try {
