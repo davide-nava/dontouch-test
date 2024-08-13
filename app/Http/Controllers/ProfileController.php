@@ -30,6 +30,7 @@ class ProfileController extends Controller
     {
         try {
             Event::dispatch(new AccessOperationEvent('ProfileController@readAll'));
+            Log::debug('Reading all profile ');
 
             $profiles = $this->profileService->all();
 
@@ -95,15 +96,13 @@ class ProfileController extends Controller
 
             Log::debug('Update profile {req}', ['req' => $request]);
 
-            $validator = Validator::make($request->all(), [
+            $request->validate([
                 'nome' => 'required|string',
                 'cognome' => 'required|string',
                 'numero_di_telefono' => 'required|string',
                 'data_di_creazione' => 'required|date',
                 'data_di_modifica' => 'required|date',
             ]);
-
-            $validator->safe()->all();
 
             if ($validator->fails()) {
                 return response()->json(['message' => $validator->errors(), 'data' => $request], 400);
@@ -149,7 +148,7 @@ class ProfileController extends Controller
 
             Log::debug('Update profile {req}', ['req' => $request]);
 
-            $validator = Validator::make($request->all(), [
+            $request->validate([
                 'id' => 'required',
                 'nome' => 'required|string',
                 'cognome' => 'required|string',

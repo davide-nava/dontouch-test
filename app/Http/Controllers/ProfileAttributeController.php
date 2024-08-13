@@ -32,6 +32,8 @@ class ProfileAttributeController extends Controller
             Event::dispatch(new AccessOperationEvent('ProfileAttributeController@readAll'));
             $profileAttributes = $this->profileAttributeService->all();
 
+            Log::debug('Reading all profile attributes ');
+
             if ($profileAttributes) {
                 return response()->json(['message' => 'OK', 'data' => $profileAttributes]);
             } else {
@@ -103,7 +105,7 @@ class ProfileAttributeController extends Controller
 
             Log::debug('Create profile attribute {req}', ['req' => $request]);
 
-            $validator = Validator::make($request->all(), [
+            $request->validate([
                 'profile_id' => 'required|number',
                 'attribute' => 'required|string',
                 'data_di_creazione' => 'required|date',
@@ -144,7 +146,7 @@ class ProfileAttributeController extends Controller
 
             Log::debug('Update profile attribute {req}', ['req' => $request]);
 
-            $validator = Validator::make($request->all(), [
+            $request->validate([
                 'profile_id' => 'required|number',
                 'attribute' => 'required|string',
                 'data_di_creazione' => 'required|date',

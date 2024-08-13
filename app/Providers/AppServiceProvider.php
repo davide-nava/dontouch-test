@@ -22,11 +22,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
-        $this->app->bind(UserService::class, function ($app) {
-            return new UserService($app->make(UserRepositoryInterface::class));
-        });
-
         $this->app->bind(ProfileRepositoryInterface::class, ProfileRepository::class);
         $this->app->bind(ProfileService::class, function ($app) {
             return new ProfileService($app->make(ProfileRepositoryInterface::class));
@@ -40,5 +35,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(\Illuminate\Contracts\Routing\ResponseFactory::class, function () {
             return new \Laravel\Lumen\Http\ResponseFactory();
         });
+
+        $this->app->extend(\Illuminate\Translation\Translator::class, function ($translator) {
+            return new \App\Translation\Translator($translator->getLoader(), $translator->getLocale());
+        });
+
     }
 }

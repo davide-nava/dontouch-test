@@ -16,10 +16,7 @@
 use Illuminate\Support\Facades\Route;
 
 $router->get('/', function () use ($router) {
-    $openapi = \OpenApi\Generator::scan(['../']);
-    header('Content-Type: application/x-yaml');
-    echo $openapi->toYaml();
-
+    echo 'Ciao Mondo';
 });
 
 $router->get('/version', function () use ($router) {
@@ -27,9 +24,6 @@ $router->get('/version', function () use ($router) {
 });
 
 Route::post('api/auth/login', 'AuthController@login');
-Route::post('api/auth/logout', ['middleware' => 'auth', 'uses' => 'AuthController@logout']);
-Route::post('api/auth/refresh', ['middleware' => 'auth', 'uses' => 'AuthController@refresh']);
-Route::post('api/auth/user-profile', ['middleware' => 'auth', 'uses' => 'AuthController@me']);
 
 Route::get('api/profile', ['uses' => 'ProfileController@readAll']);
 Route::get('api/profile/{id:\d+}', ['uses' => 'ProfileController@read']);
