@@ -14,12 +14,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 {
     use Authenticatable, Authorizable, HasFactory;
 
-    /**
-     * Indicates if the model's ID is auto-incrementing.
-     *
-     * @var bool
-     */
     public $incrementing = true;
+    public $autoincrement = true;
 
     protected $table = 'users';
     protected $primaryKey = 'id';

@@ -78,12 +78,16 @@ class ProfileAttributeController extends Controller
         }
     }
 
-    private function validateRequest($data): array
+    private function validateRequest($data, bool $testId = true): array
     {
-        $data['profile_id'] = filter_input($data['profile_id'], FILTER_SANITIZE_SPECIAL_CHARS, FILTER_VALIDATE_INT, FILTER_SANITIZE_NUMBER_INT);
-        $data['attribute'] = filter_input($data['attribute'], FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING);
-        $data['data_di_creazione'] = filter_input($data['data_di_creazione'], FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING);
-        $data['data_di_modifica'] = filter_input($data['data_di_modifica'], FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING);
+        if ($testId) {
+            $data['id'] = filter_var($data['id'], FILTER_VALIDATE_INT);
+        }
+
+        $data['profile_id'] = filter_var($data['profile_id'], FILTER_VALIDATE_INT);
+        $data['attribute'] = filter_var($data['attribute'], FILTER_SANITIZE_STRING);
+        $data['data_di_creazione'] = filter_var($data['data_di_creazione'], FILTER_SANITIZE_STRING);
+        $data['data_di_modifica'] = filter_var($data['data_di_modifica'], FILTER_SANITIZE_STRING);
 
         return $data;
     }
@@ -118,10 +122,10 @@ class ProfileAttributeController extends Controller
                 return response()->json(['message' => $validator->errors(), 'data' => $request], 400);
             } else {
 
-                $data = $this->validateRequest($request->all());
+                $data = $this->validateRequest($request->all(), false);
 
                 $this->profileAttributeService->create($data);
-                return response()->json(['message' => 'OK', 'data' => null], 201);
+                return response()->json(['message' => 'OK', 'data' => $data], 201);
             }
         } catch (Exception $e) {
             Log::error('Error: \nMessage: {message}\nTrace: {trace}\nFile: {file}\nLine: {line}', ['message' => $e->getMessage(), "trace" => $e->getTraceAsString(), "file" => $e->getFile(), "line" => $e->getLine()]);

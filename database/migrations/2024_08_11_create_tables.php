@@ -40,12 +40,6 @@ return new class extends Migration {
             $table->unique(['profile_id', 'attribute']);
             $table->foreignId('profile_id')->references('id')->on('profiles');
         });
-
-        Schema::create('sessions', function ($table) {
-            $table->string('id')->unique();
-            $table->text('payload');
-            $table->integer('last_activity');
-        });
     }
 
     /**

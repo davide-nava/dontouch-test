@@ -107,11 +107,11 @@ class ProfileController extends Controller
             if ($validator->fails()) {
                 return response()->json(['message' => $validator->errors(), 'data' => $request], 400);
             } else {
-                $data = $this->validateRequest($request->all());
+                $data = $this->validateRequest($request->all(), false);
 
                 $this->profileService->create($data);
 
-                return response()->json(['message' => 'OK', 'data' => null], 201);
+                return response()->json(['message' => 'OK', 'data' => $data], 201);
             }
         } catch (Exception $e) {
             Log::error('Error: \nMessage: {message}\nTrace: {trace}\nFile: {file}\nLine: {line}', ['message' => $e->getMessage(), "trace" => $e->getTraceAsString(), "file" => $e->getFile(), "line" => $e->getLine()]);
@@ -119,14 +119,17 @@ class ProfileController extends Controller
         }
     }
 
-    private function validateRequest($data): array
+    private function validateRequest($data, bool $testId = true): array
     {
-        $data['id'] = filter_input($data['id'], FILTER_SANITIZE_SPECIAL_CHARS, FILTER_VALIDATE_INT, FILTER_SANITIZE_NUMBER_INT);
-        $data['cognome'] = filter_input($data['cognome'], FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING);
-        $data['nome'] = filter_input($data['nome'], FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING);
-        $data['numero_di_telefono'] = filter_input($data['numero_di_telefono'], FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING);
-        $data['data_di_creazione'] = filter_input($data['data_di_creazione'], FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING);
-        $data['data_di_modifica'] = filter_input($data['data_di_modifica'], FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING);
+        if ($testId) {
+            $data['id'] = filter_var($data['id'], FILTER_VALIDATE_INT);
+        }
+
+        $data['cognome'] = filter_var($data['cognome'], FILTER_SANITIZE_STRING);
+        $data['nome'] = filter_var($data['nome'], FILTER_SANITIZE_STRING);
+        $data['numero_di_telefono'] = filter_var($data['numero_di_telefono'], FILTER_SANITIZE_STRING);
+        $data['data_di_creazione'] = filter_var($data['data_di_creazione'], FILTER_SANITIZE_STRING);
+        $data['data_di_modifica'] = filter_var($data['data_di_modifica'], FILTER_SANITIZE_STRING);
 
         return $data;
     }

@@ -13,8 +13,7 @@ class ProfileRepository implements ProfileRepositoryInterface
 
     public function create($data)
     {
-
-        return Profile::create($data);
+        return Profile::insert($data);
     }
 
     public function update($data)

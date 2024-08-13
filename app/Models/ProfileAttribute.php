@@ -10,7 +10,9 @@ class ProfileAttribute extends Model
 
     protected $table = 'profile_attributes';
     protected $primaryKey = 'id';
+
     public $incrementing = true;
+    public $autoincrement = true;
 
     use SoftDeletes;
 

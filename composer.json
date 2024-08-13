@@ -22,8 +22,6 @@
         "illuminate/contracts": "9.*",
         "illuminate/filesystem": "9.*",
         "illuminate/macroable": "9.*",
-        "illuminate/redis": "9.*",
-        "illuminate/session": "9.*",
         "illuminate/support": "9.*",
         "illuminate/translation": "9.*",
         "laravel/lumen-framework": "9.*",
