@@ -15,10 +15,8 @@ return new class extends Migration {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('email')->unique()->notnull();
             $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
 
@@ -41,6 +39,12 @@ return new class extends Migration {
             $table->softDeletes('deleted_at', precision: 0);
             $table->unique(['profile_id', 'attribute']);
             $table->foreignId('profile_id')->references('id')->on('profiles');
+        });
+
+        Schema::create('sessions', function ($table) {
+            $table->string('id')->unique();
+            $table->text('payload');
+            $table->integer('last_activity');
         });
     }
 

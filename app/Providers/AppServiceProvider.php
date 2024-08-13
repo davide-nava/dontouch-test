@@ -36,9 +36,9 @@ class AppServiceProvider extends ServiceProvider
             return new \Laravel\Lumen\Http\ResponseFactory();
         });
 
-        $this->app->extend(\Illuminate\Translation\Translator::class, function ($translator) {
-            return new \App\Translation\Translator($translator->getLoader(), $translator->getLocale());
-        });
+        // $this->app->extend(\Illuminate\Translation\Translator::class, function ($translator) {
+        //     return new \App\Translation\Translator($translator->getLoader(), $translator->getLocale());
+        // });
 
     }
 }

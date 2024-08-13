@@ -60,6 +60,8 @@ $app->singleton(
 */
 
 $app->configure('app');
+$app->configure('jwt');
+$app->configure('database');
 
 /*
 |--------------------------------------------------------------------------
@@ -71,7 +73,6 @@ $app->configure('app');
 | route or middleware that'll be assigned to some specific routes.
 |
 */
-
 $app->middleware([
     App\Http\Middleware\AccessOperation::class
 ]);
@@ -94,7 +95,7 @@ $app->routeMiddleware([
 $app->register(App\Providers\AppServiceProvider::class);
 $app->register(App\Providers\AuthServiceProvider::class);
 $app->register(App\Providers\EventServiceProvider::class);
-
+$app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 
 /*

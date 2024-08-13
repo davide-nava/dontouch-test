@@ -24,6 +24,7 @@ $router->get('/version', function () use ($router) {
 });
 
 Route::post('api/auth/login', 'AuthController@login');
+Route::get('api/auth/logout', 'AuthController@logout');
 
 Route::get('api/profile', ['uses' => 'ProfileController@readAll']);
 Route::get('api/profile/{id:\d+}', ['uses' => 'ProfileController@read']);

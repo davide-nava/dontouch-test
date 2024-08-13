@@ -96,7 +96,7 @@ class ProfileController extends Controller
 
             Log::debug('Update profile {req}', ['req' => $request]);
 
-            $request->validate([
+            $validator = Validator::make($request->all(), [
                 'nome' => 'required|string',
                 'cognome' => 'required|string',
                 'numero_di_telefono' => 'required|string',
@@ -148,7 +148,7 @@ class ProfileController extends Controller
 
             Log::debug('Update profile {req}', ['req' => $request]);
 
-            $request->validate([
+            $validator = Validator::make($request->all(), [
                 'id' => 'required',
                 'nome' => 'required|string',
                 'cognome' => 'required|string',

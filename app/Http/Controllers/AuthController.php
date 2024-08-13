@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Validator;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * @OA\Info(title="Test API", version="0.1")
@@ -19,7 +20,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @OA\Get(
+     * @OA\Post(
      *     path="/api/auth/login",
      *     summary="Login user",
      *     @OA\Response(response="200", description="Ok"),
@@ -27,7 +28,6 @@ class AuthController extends Controller
      *     @OA\Response(response="500", description="Error message")
      * )
      */
-
     public function login(Request $request)
     {
         try {
@@ -39,23 +39,52 @@ class AuthController extends Controller
                 'password' => 'required|string',
             ]);
 
-            // if (filter_input($request['email'], FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING, FILTER_SANITIZE_EMAIL) != '' && filter_input($request['password'], FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_STRING) != '') {
-            //     return response()->json(['message' => 'Bad request', 'data' => $request], 400);
-            // } else {
-            return response()->json(['message' => 'OK', 'data' => $this->respondWithToken($request->all())]);
-            // }
+            $validator->safe()->all();
+
+            if ($validator->fails()) {
+                return response()->json(['message' => $validator->errors(), 'data' => $request], 400);
+            } else {
+                $credentials = $request->only(['email', 'password']);
+
+                if (!$token = Auth::setTTL(7200)->attempt($credentials)) {
+                    return response()->json(['message' => 'Unauthorized'], 401);
+                }
+
+                return response()->json([
+                    'message' => 'OK',
+                    'data' => [
+                        'userid' => Auth::user()->id,
+                        'username' => Auth::user()->name,
+                        'email' => Auth::user()->email,
+                        'bearer_token' => $token,
+                        'expires_in' => Auth::factory()->getTTL()
+                    ]
+                ]);
+            }
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage(), 'data' => null], 500);
         }
     }
 
-    protected function respondWithToken($token)
+    /**
+     * @OA\Post(
+     *     path="/api/auth/logout",
+     *     summary="Logout user",
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="404", description="Not Found"),
+     *     @OA\Response(response="500", description="Error message")
+     * )
+     */
+    public function logout()
     {
-        return response()->json([
-            'access_token' => $token,
-            'token_type' => 'bearer',
-            'user' => auth()->user(),
-            'expires_in' => 60 * 24
-        ]);
+        try {
+            $token = auth()->tokenById(Auth::user()->userid);
+
+            auth()->logout(true);
+
+            return response()->json(['message' => 'OK', 'data' => null]);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage(), 'data' => null], 500);
+        }
     }
 }
