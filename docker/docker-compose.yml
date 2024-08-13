@@ -1,0 +1,20 @@
+version: "3"
+services:
+  app:
+    build:
+      context: ./..
+      dockerfile: docker/dockerfile
+    container_name: php-apache
+    volumes:
+      - ./..:/var/www/html
+      - ./xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    ports:
+      - "8081:80"
+  seq:
+    image: datalust/seq:latest
+    container_name: seq-dev
+    ports:
+      - "5341:5341"
+    environment:
+      ACCEPT_EULA: Y
+    restart: always

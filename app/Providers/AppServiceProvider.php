@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use App\Services\UserService;
+use App\Services\ProfileService;
+use App\Services\ProfileAttributeService;
+use App\Repositories\UserRepository;
+use App\Repositories\ProfileRepository;
+use App\Repositories\ProfileAttributeRepository;
+use App\Repositories\UserRepositoryInterface;
+use App\Repositories\ProfileRepositoryInterface;
+use App\Repositories\ProfileAttributeRepositoryInterface;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
+        $this->app->bind(UserService::class, function ($app) {
+            return new UserService($app->make(UserRepositoryInterface::class));
+        });
+
+        $this->app->bind(ProfileRepositoryInterface::class, ProfileRepository::class);
+        $this->app->bind(ProfileService::class, function ($app) {
+            return new ProfileService($app->make(ProfileRepositoryInterface::class));
+        });
+
+        $this->app->bind(ProfileAttributeRepositoryInterface::class, ProfileAttributeRepository::class);
+        $this->app->bind(ProfileAttributeService::class, function ($app) {
+            return new ProfileAttributeService($app->make(ProfileAttributeRepositoryInterface::class));
+        });
+
+        $this->app->singleton(\Illuminate\Contracts\Routing\ResponseFactory::class, function () {
+            return new \Laravel\Lumen\Http\ResponseFactory();
+        });
+    }
+}
