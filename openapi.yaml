@@ -1,0 +1,125 @@
+openapi: 3.0.0
+info:
+  title: 'Test API'
+  version: '0.1'
+paths:
+  /api/profile-attribute:
+    get:
+      summary: 'Get all profile attributes'
+      operationId: c79b9e50bf39c593fab3e5f3eb420f8d
+      responses:
+        '200':
+          description: Ok
+        '404':
+          description: 'Not Found'
+        '500':
+          description: 'Error message'
+  '/api/profile-attribute/{id}':
+    get:
+      summary: 'Get profile attribute'
+      operationId: 9278bd2d1834ca27a65e8ef707311ca8
+      responses:
+        '200':
+          description: Ok
+        '400':
+          description: 'Bad Request'
+        '404':
+          description: 'Not Found'
+        '500':
+          description: 'Error message'
+    put:
+      summary: 'Update profile attribute'
+      operationId: f237e894d47fb7ef675942c498ccd4a6
+      responses:
+        '200':
+          description: Ok
+        '400':
+          description: 'Bad Request'
+        '404':
+          description: 'Not Found'
+        '500':
+          description: 'Error message'
+    post:
+      summary: 'Create profile attribute'
+      operationId: 101c21ee6bb9c5b43a1a8b67e116912d
+      responses:
+        '200':
+          description: Ok
+        '400':
+          description: 'Bad Request'
+        '404':
+          description: 'Not Found'
+        '500':
+          description: 'Error message'
+    delete:
+      summary: 'Delete profile attribute'
+      operationId: f094219b791a30c88c441d65dcd86d95
+      responses:
+        '200':
+          description: Ok
+        '400':
+          description: 'Bad Request'
+        '404':
+          description: 'Not Found'
+        '500':
+          description: 'Error message'
+  /api/profile:
+    get:
+      summary: 'Gel all profiles'
+      operationId: 93175f3028f0eb5b1c0ca22625322a36
+      responses:
+        '200':
+          description: Ok
+        '404':
+          description: 'Not Found'
+        '500':
+          description: 'Error message'
+    post:
+      summary: 'Create profile'
+      operationId: 94defe5b2c2e64377f61387e8283b437
+      responses:
+        '200':
+          description: Ok
+        '400':
+          description: 'Bad Request'
+        '404':
+          description: 'Not Found'
+        '500':
+          description: 'Error message'
+  '/api/profile/{id}':
+    get:
+      summary: 'Gel profile'
+      operationId: 9ae39951403ac1b303d21cbfda1d523b
+      responses:
+        '200':
+          description: Ok
+        '400':
+          description: 'Bad Request'
+        '404':
+          description: 'Not Found'
+        '500':
+          description: 'Error message'
+    put:
+      summary: 'Update profile'
+      operationId: 43a976110aab159a678aaa450d9d29e2
+      responses:
+        '200':
+          description: Ok
+        '400':
+          description: 'Bad Request'
+        '404':
+          description: 'Not Found'
+        '500':
+          description: 'Error message'
+    delete:
+      summary: 'Delete profile'
+      operationId: 6094e0fcacf034cf451e52c3dda3d885
+      responses:
+        '200':
+          description: Ok
+        '400':
+          description: 'Bad Request'
+        '404':
+          description: 'Not Found'
+        '500':
+          description: 'Error message'

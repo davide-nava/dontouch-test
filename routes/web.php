@@ -16,7 +16,14 @@
 use Illuminate\Support\Facades\Route;
 
 $router->get('/', function () use ($router) {
-    return "Hello World";
+    $openapi = \OpenApi\Generator::scan(['../']);
+    header('Content-Type: application/x-yaml');
+    echo $openapi->toYaml();
+
+});
+
+$router->get('/version', function () use ($router) {
+    return $router->app->version();
 });
 
 Route::post('api/auth/login', 'AuthController@login');
@@ -25,13 +32,13 @@ Route::post('api/auth/refresh', ['middleware' => 'auth', 'uses' => 'AuthControll
 Route::post('api/auth/user-profile', ['middleware' => 'auth', 'uses' => 'AuthController@me']);
 
 Route::get('api/profile', ['uses' => 'ProfileController@readAll']);
-Route::get('api/profile/{id}', ['uses' => 'ProfileController@read']);
+Route::get('api/profile/{id:\d+}', ['uses' => 'ProfileController@read']);
 Route::post('api/profile', ['middleware' => 'auth', 'uses' => 'ProfileController@create']);
-Route::put('api/profile/{id}', ['middleware' => 'auth', 'uses' => 'ProfileController@update']);
-Route::delete('api/profile/{id}', ['middleware' => 'auth', 'uses' => 'ProfileController@delete']);
+Route::put('api/profile/{id:\d+}', ['middleware' => 'auth', 'uses' => 'ProfileController@update']);
+Route::delete('api/profile/{id:\d+}', ['middleware' => 'auth', 'uses' => 'ProfileController@delete']);
 
 Route::get('api/profile-attribute', ['uses' => 'ProfileAttributeController@readAll']);
-Route::get('api/profile-attribute/{id}', ['uses' => 'ProfileAttributeController@read']);
+Route::get('api/profile-attribute/{id:\d+}', ['uses' => 'ProfileAttributeController@read']);
 Route::post('api/profile-attribute', ['middleware' => 'auth', 'uses' => 'ProfileAttributeController@create']);
-Route::put('api/profile-attribute/{id}', ['middleware' => 'auth', 'uses' => 'ProfileAttributeController@update']);
-Route::delete('api/profile-attribute/{id}', ['middleware' => 'auth', 'uses' => 'ProfileAttributeController@delete']);
+Route::put('api/profile-attribute/{id:\d+}', ['middleware' => 'auth', 'uses' => 'ProfileAttributeController@update']);
+Route::delete('api/profile-attribute/{id:\d+}', ['middleware' => 'auth', 'uses' => 'ProfileAttributeController@delete']);

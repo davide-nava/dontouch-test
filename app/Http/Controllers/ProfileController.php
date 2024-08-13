@@ -21,8 +21,8 @@ class ProfileController extends Controller
      * @OA\Get(
      *     path="/api/profile",
      *     summary="Gel all profiles",
-     *     @OA\Response(response="200", description="Ok")
-     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="404", description="Not Found"),
      *     @OA\Response(response="500", description="Error message")
      * )
      */
@@ -48,13 +48,13 @@ class ProfileController extends Controller
      * @OA\Get(
      *     path="/api/profile/{id}",
      *     summary="Gel profile",
-     *     @OA\Response(response="200", description="Ok")
-     *     @OA\Response(response="400", description="Bad Request")
-     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="404", description="Not Found"),
      *     @OA\Response(response="500", description="Error message")
      * )
      */
-    public function read(int $id)
+    public function read($id)
     {
         try {
             Event::dispatch(new AccessOperationEvent('ProfileController@read'));
@@ -82,9 +82,9 @@ class ProfileController extends Controller
      * @OA\Post(
      *     path="/api/profile",
      *     summary="Create profile",
-     *     @OA\Response(response="200", description="Ok")
-     *     @OA\Response(response="400", description="Bad Request")
-     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="404", description="Not Found"),
      *     @OA\Response(response="500", description="Error message")
      * )
      */
@@ -136,9 +136,9 @@ class ProfileController extends Controller
      * @OA\Put(
      *     path="/api/profile/{id}",
      *     summary="Update profile",
-     *     @OA\Response(response="200", description="Ok")
-     *     @OA\Response(response="400", description="Bad Request")
-     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="404", description="Not Found"),
      *     @OA\Response(response="500", description="Error message")
      * )
      */
@@ -188,9 +188,9 @@ class ProfileController extends Controller
      * @OA\Delete(
      *     path="/api/profile/{id}",
      *     summary="Delete profile",
-     *     @OA\Response(response="200", description="Ok")
-     *     @OA\Response(response="400", description="Bad Request")
-     *     @OA\Response(response="404", description="Not Found")
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="404", description="Not Found"),
      *     @OA\Response(response="500", description="Error message")
      * )
      */

@@ -8,7 +8,7 @@ class ProfileRepository implements ProfileRepositoryInterface
 {
     public function all()
     {
-        return Profile::withTrashed()->get();
+        return Profile::withTrashed()->with('attributes')->get();
     }
 
     public function create($data)
@@ -32,6 +32,6 @@ class ProfileRepository implements ProfileRepositoryInterface
 
     public function find($id)
     {
-        return Profile::withTrashed()->findOrFail($id);
+        return Profile::withTrashed()->with('attributes')->findOrFail($id);
     }
 }

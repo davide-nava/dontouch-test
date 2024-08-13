@@ -20,9 +20,9 @@ class ProfileAttributeController extends Controller
     /**
      * @OA\Get(
      *     path="/api/profile-attribute",
-     *     summary="Delete profile",
-     *     @OA\Response(response="200", description="Ok")
-     *     @OA\Response(response="404", description="Not Found")
+     *     summary="Get all profile attributes",
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="404", description="Not Found"),
      *     @OA\Response(response="500", description="Error message")
      * )
      */
@@ -44,15 +44,15 @@ class ProfileAttributeController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/profile-attribute/{id}/",
-     *     summary="Get profile",
-     *     @OA\Response(response="200", description="Ok")
-     *     @OA\Response(response="400", description="Bad Request")
-     *     @OA\Response(response="404", description="Not Found")
+     *     path="/api/profile-attribute/{id}",
+     *     summary="Get profile attribute",
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="404", description="Not Found"),
      *     @OA\Response(response="500", description="Error message")
      * )
      */
-    public function read(int $id)
+    public function read($id)
     {
         try {
             Event::dispatch(new AccessOperationEvent('ProfileAttributeController@read'));
@@ -89,10 +89,10 @@ class ProfileAttributeController extends Controller
     /**
      * @OA\Post(
      *     path="/api/profile-attribute/{id}",
-     *     summary="Create profile",
-     *     @OA\Response(response="200", description="Ok")
-     *     @OA\Response(response="400", description="Bad Request")
-     *     @OA\Response(response="404", description="Not Found")
+     *     summary="Create profile attribute",
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="404", description="Not Found"),
      *     @OA\Response(response="500", description="Error message")
      * )
      */
@@ -130,10 +130,10 @@ class ProfileAttributeController extends Controller
     /**
      * @OA\Put(
      *     path="/api/profile-attribute/{id}",
-     *     summary="Update profile",
-     *     @OA\Response(response="200", description="Ok")
-     *     @OA\Response(response="400", description="Bad Request")
-     *     @OA\Response(response="404", description="Not Found")
+     *     summary="Update profile attribute",
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="404", description="Not Found"),
      *     @OA\Response(response="500", description="Error message")
      * )
      */
@@ -179,10 +179,10 @@ class ProfileAttributeController extends Controller
     /**
      * @OA\Delete(
      *     path="/api/profile-attribute/{id}",
-     *     summary="Delete profile",
-     *     @OA\Response(response="200", description="Ok")
-     *     @OA\Response(response="400", description="Bad Request")
-     *     @OA\Response(response="404", description="Not Found")
+     *     summary="Delete profile attribute",
+     *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad Request"),
+     *     @OA\Response(response="404", description="Not Found"),
      *     @OA\Response(response="500", description="Error message")
      * )
      */
