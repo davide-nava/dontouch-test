@@ -2,9 +2,9 @@
 
 namespace Tests\Controllers;
 
-use Tests\TestCase;
+use Tests\BaseTestCase;
 
-class ProfileControllerTest extends TestCase
+class ProfileControllerTest extends BaseTestCase
 {
     /**
      * A basic test example.

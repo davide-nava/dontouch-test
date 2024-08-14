@@ -2,19 +2,28 @@
 
 namespace Tests;
 
-class AccessOperationTest extends TestCase
+class AccessOperationTest extends BaseTestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function test_that_base_endpoint_returns_a_successful_response()
+    /** @test */
+    public function check_logs_access_contains_called_path()
     {
+        unlink(realpath('../../storage/logs/access.log'));
+
+        $this->get('/');
+        $this->get('/api/profile');
+
+        $file = file_get_contents('../../storage\logs\access.log');
+
+        $this->assertTrue(str_contains($file, 'http://localhost:8000/api/profile') && str_contains($file, 'http://localhost:8000/api/profile'), $file);
+    }
+
+    /** @test */
+    public function check_logs_access_file_exist()
+    {
+        unlink('../../storage/logs/access.log');
+
         $this->get('/');
 
-        $this->assertResponseStatus(200);
-
-
+        $this->assertFileExists('../../storage/logs/access.log');
     }
 }

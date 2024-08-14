@@ -2,9 +2,9 @@
 
 namespace Tests\Middlewares;
 
-use Tests\TestCase;
+use Tests\BaseTestCase;
 
-class AuthenticateTest extends TestCase
+class AuthenticateTest extends BaseTestCase
 {
     /**
      * A basic test example.

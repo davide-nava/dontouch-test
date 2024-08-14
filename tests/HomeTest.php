@@ -2,13 +2,9 @@
 
 namespace Tests;
 
-class HomeTest extends TestCase
+class HomeTest extends BaseTestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
+    /** @test */
     public function root_endpoint_return_200()
     {
         $this->get('/');

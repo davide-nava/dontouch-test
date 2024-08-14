@@ -2,9 +2,9 @@
 
 namespace Tests\Exceptions;
 
-use Tests\TestCase;
+use Tests\BaseTestCase;
 
-class ExceptionTest extends TestCase
+class ExceptionTest extends BaseTestCase
 {
     /**
      * A basic test example.

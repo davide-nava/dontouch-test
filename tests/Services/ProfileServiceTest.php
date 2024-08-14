@@ -2,9 +2,9 @@
 
 namespace Tests\Services;
 
-use Tests\TestCase;
+use Tests\BaseTestCase;
 
-class ProfileServiceTest extends TestCase
+class ProfileServiceTest extends BaseTestCase
 {
     /**
      * A basic test example.

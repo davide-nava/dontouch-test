@@ -2,9 +2,9 @@
 
 namespace Tests\Controllers;
 
-use Tests\TestCase;
+use Tests\BaseTestCase;
 
-class AuthControllerTest extends TestCase
+class AuthControllerTest extends BaseTestCase
 {
     /**
      * A basic test example.
