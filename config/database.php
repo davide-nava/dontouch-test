@@ -34,17 +34,13 @@ return [
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DB_URL'),
-            'database' => dirname(__DIR__) . '\\' . env('DB_DATABASE', database_path('database\profiles.db')),
+            'database' => database_path(env('DB_DATABASE', 'profiles.db')),
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
             'busy_timeout' => null,
             'journal_mode' => null,
             'synchronous' => null,
         ],
-
-
-
-
     ],
 
     /*

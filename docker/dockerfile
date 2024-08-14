@@ -1,14 +1,49 @@
 FROM php:8.3-apache
 
-RUN apk update
-RUN curl -sS https://getcomposer.org/installer | php --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- \
+     --install-dir=/usr/local/bin --filename=composer
+
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    software-properties-common \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    sqlite3 \
+    nginx \
+    build-essential openssl libssl-dev
+
+# Install PHP extensions
+RUN docker-php-ext-install pdo mbstring exif pcntl bcmath gd
+
+RUN apt-get upgrade
 
 RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf \
  && sed -ri -e 's!/var/www/!/var/www/html/public!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
-RUN /usr/sbin/a2enmod rewrite \
- && /usr/sbin/a2enmod headers \
- && /usr/sbin/a2enmod expires
+RUN a2enmod rewrite
+RUN a2enmod headers
+RUN service apache2 restart
 
-RUN pecl install xdebug \
- && docker-php-ext-enable xdebug
+# Set the working directory
+WORKDIR /var/www/html
+
+# Copy the application code
+COPY --chown=777  . .
+
+# COPY ./docker/laravel.ini /usr/local/etc/php/conf.d/laravel.ini
+
+# Install project dependencies
+RUN composer install
+
+# Set permissions
+RUN chmod 777 /var/www/html/bootstrap /var/www/html/storage /var/www/html/storage/logs /var/www/html/app/storage/logs
+RUN chmod 777 /var/www/html
+
+RUN service apache2 restart

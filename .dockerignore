@@ -1,0 +1,10 @@
+**/.git
+**/.idea
+**/.vscode
+**/docker
+**/vendor
+
+**/*.log
+**/*.md
+**/*.gitignore
+**/*.editorconfig
