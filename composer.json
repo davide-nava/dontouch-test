@@ -34,6 +34,7 @@
         "zircote/swagger-php": "*"
     },
     "require-dev": {
+        "brianium/paratest": "^6.11",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.4",
         "phpunit/phpunit": "^9.6"
