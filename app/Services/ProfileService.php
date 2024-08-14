@@ -10,7 +10,7 @@ class ProfileService implements ProfileRepositoryInterface
     {
     }
 
-    public function create( $data)
+    public function create($data)
     {
         $data["numero_di_telefono"] = $this->clearPrefix($data["numero_di_telefono"]);
 
@@ -30,7 +30,7 @@ class ProfileService implements ProfileRepositoryInterface
         return $numero;
     }
 
-    public function update( $data)
+    public function update($data)
     {
         $data["numero_di_telefono"] = $this->clearPrefix($data["numero_di_telefono"]);
 

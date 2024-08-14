@@ -1,8 +1,10 @@
 <?php
 
-namespace Tests;
+namespace Tests\Controllers;
 
-class ExampleTest extends TestCase
+use Tests\TestCase;
+
+class ProfileControllerTest extends TestCase
 {
     /**
      * A basic test example.
@@ -14,7 +16,8 @@ class ExampleTest extends TestCase
         $this->get('/');
 
         $this->assertEquals(
-            $this->app->version(), $this->response->getContent()
+            $this->app->version(),
+            $this->response->getContent()
         );
     }
 }

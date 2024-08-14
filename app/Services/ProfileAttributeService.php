@@ -10,12 +10,12 @@ class ProfileAttributeService implements ProfileAttributeRepositoryInterface
     {
     }
 
-    public function create(  $data)
+    public function create($data)
     {
         return $this->profileAttributeRepository->create($data);
     }
 
-    public function update(  $data)
+    public function update($data)
     {
         return $this->profileAttributeRepository->update($data);
     }

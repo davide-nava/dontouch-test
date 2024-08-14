@@ -14,7 +14,7 @@ class AccessOperation
     public function handle(Request $request, Closure $next): Response
     {
         $log = new Logger('AccessOperation');
-        $log->pushHandler(new StreamHandler(__DIR__ . '/../../app/storage/logs/access.log'));
+        $log->pushHandler(new StreamHandler(__DIR__ . '/../../storage/logs/access.log'));
 
         $log->info($request->url());
 

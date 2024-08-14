@@ -35,10 +35,5 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(\Illuminate\Contracts\Routing\ResponseFactory::class, function () {
             return new \Laravel\Lumen\Http\ResponseFactory();
         });
-
-        // $this->app->extend(\Illuminate\Translation\Translator::class, function ($translator) {
-        //     return new \App\Translation\Translator($translator->getLoader(), $translator->getLocale());
-        // });
-
     }
 }

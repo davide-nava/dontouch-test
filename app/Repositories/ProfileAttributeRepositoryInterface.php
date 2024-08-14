@@ -2,15 +2,6 @@
 
 namespace App\Repositories;
 
-interface ProfileAttributeRepositoryInterface
+interface ProfileAttributeRepositoryInterface extends BaseRepositoryInterface
 {
-    public function delete($id);
-
-    public function find($id);
-
-    public function all();
-
-    public function create($data);
-
-    public function update($data);
 }

@@ -16,12 +16,10 @@
 use Illuminate\Support\Facades\Route;
 
 $router->get('/', function () use ($router) {
-    echo 'Ciao Mondo';
-});
+    echo 'Ciao Mondo'; });
 
 $router->get('/version', function () use ($router) {
-    return $router->app->version();
-});
+    return $router->app->version(); });
 
 Route::post('api/auth/login', 'AuthController@login');
 Route::get('api/auth/logout', 'AuthController@logout');
