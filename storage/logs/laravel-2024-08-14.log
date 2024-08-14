@@ -63,3 +63,6 @@ User-Agent:      PostmanRuntime/7.41.1
 #4 C:\\DEV\\dontouch-test\\artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #5 {main}
 "} 
+[2024-08-14 20:07:09] testing.DEBUG: Reading all profile   
+[2024-08-14 20:10:02] testing.DEBUG: Reading all profile   
+[2024-08-14 20:10:23] testing.DEBUG: Reading all profile   
