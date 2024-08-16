@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\ProfileRepositoryInterface;
+use Illuminate\Support\Facades\Cache;
 
 class ProfileService implements ProfileRepositoryInterface
 {
@@ -13,6 +14,8 @@ class ProfileService implements ProfileRepositoryInterface
     public function create($data)
     {
         $data["numero_di_telefono"] = $this->clearPrefix($data["numero_di_telefono"]);
+
+        Cache::forget('profiles');
 
         return $this->profileRepository->create($data);
     }
@@ -34,11 +37,15 @@ class ProfileService implements ProfileRepositoryInterface
     {
         $data["numero_di_telefono"] = $this->clearPrefix($data["numero_di_telefono"]);
 
+        Cache::forget('profiles');
+
         return $this->profileRepository->update($data);
     }
 
     public function delete($id)
     {
+        Cache::forget('profiles');
+
         return $this->profileRepository->delete($id);
     }
 

@@ -20,6 +20,7 @@
         "doctrine/annotations": "^2.0",
         "laravel/lumen-framework": "^9.0",
         "monolog/monolog": "^2.9",
+        "predis/predis": "^2.2",
         "tymon/jwt-auth": "*",
         "zircote/swagger-php": "*"
     },
