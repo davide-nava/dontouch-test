@@ -2,18 +2,16 @@
 
 namespace Tests\Exceptions;
 
-use Tests\BaseTestCase;
+use Tests\TestCase;
 
-class ExceptionTest extends BaseTestCase
+
+class ExceptionTest extends TestCase
 {
     /** @test */
-    public function test_that_base_endpoint_returns_a_successful_response()
+    public function test_wrong_endpoint_return_404()
     {
-        $this->get('/');
+        $this->get('/aaaaaaaa');
 
-        $this->assertEquals(
-            $this->app->version(),
-            $this->response->getContent()
-        );
+        $this->assertResponseStatus(404);
     }
 }

@@ -4,10 +4,8 @@ namespace App\Events;
 
 use Illuminate\Queue\SerializesModels;
 
-class AccessOperationEvent
+class AccessOperationEvent extends Event
 {
-    use SerializesModels;
-
     public string $operation;
 
     /**

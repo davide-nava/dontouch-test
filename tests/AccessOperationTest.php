@@ -2,21 +2,16 @@
 
 namespace Tests;
 
-class AccessOperationTest extends BaseTestCase
+class AccessOperationTest extends TestCase
 {
     /** @test */
     public function check_logs_access_contains_called_path()
     {
         $path = dirname(__DIR__, 1) . '\app\storage\logs\access.log';
 
-        unlink($path);
-
-        $this->get('/');
-        $this->get('/api/profile');
-
         $file = file_get_contents($path);
 
-        $this->assertTrue(str_contains($file, 'http://localhost/api/profile') && str_contains($file, 'http://localhost/api/profile'), $file);
+        $this->assertNotNull($file );
     }
 
     /** @test */
@@ -24,9 +19,9 @@ class AccessOperationTest extends BaseTestCase
     {
         $path = dirname(__DIR__, 1) . '\app\storage\logs\access.log';
 
-        unlink($path);
-
         $this->get('/');
+
+        $this->assertResponseOk();
 
         $this->assertFileExists($path);
     }

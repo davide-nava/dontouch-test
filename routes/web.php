@@ -13,27 +13,32 @@
 |
 */
 
-use Illuminate\Support\Facades\Route;
+use App\Events\AccessOperationEvent;
+use Illuminate\Support\Facades\Event;
 
 $router->get('/', function () use ($router) {
-    echo __('messages.welcome');
+    Event::dispatch(new AccessOperationEvent('Home'));
+
+    return   __('messages.welcome');
 });
 
 $router->get('/version', function () use ($router) {
+    Event::dispatch(new AccessOperationEvent('Version'));
+
     return $router->app->version();
 });
 
-Route::post('api/auth/login', 'AuthController@login');
-Route::get('api/auth/logout', 'AuthController@logout');
+$router->post('api/auth/login', 'AuthController@login');
+$router->get('api/auth/logout', 'AuthController@logout');
 
-Route::get('api/profile', ['uses' => 'ProfileController@readAll']);
-Route::get('api/profile/{id:\d+}', ['uses' => 'ProfileController@read']);
-Route::post('api/profile', ['middleware' => 'auth', 'uses' => 'ProfileController@create']);
-Route::put('api/profile/{id:\d+}', ['middleware' => 'auth', 'uses' => 'ProfileController@update']);
-Route::delete('api/profile/{id:\d+}', ['middleware' => 'auth', 'uses' => 'ProfileController@delete']);
+$router->get('api/profile', ['uses' => 'ProfileController@readAll']);
+$router->get('api/profile/{id:\d+}', ['uses' => 'ProfileController@read']);
+$router->post('api/profile', ['middleware' => 'auth', 'uses' => 'ProfileController@create']);
+$router->put('api/profile/{id:\d+}', ['middleware' => 'auth', 'uses' => 'ProfileController@update']);
+$router->delete('api/profile/{id:\d+}', ['middleware' => 'auth', 'uses' => 'ProfileController@delete']);
 
-Route::get('api/profile-attribute', ['uses' => 'ProfileAttributeController@readAll']);
-Route::get('api/profile-attribute/{id:\d+}', ['uses' => 'ProfileAttributeController@read']);
-Route::post('api/profile-attribute', ['middleware' => 'auth', 'uses' => 'ProfileAttributeController@create']);
-Route::put('api/profile-attribute/{id:\d+}', ['middleware' => 'auth', 'uses' => 'ProfileAttributeController@update']);
-Route::delete('api/profile-attribute/{id:\d+}', ['middleware' => 'auth', 'uses' => 'ProfileAttributeController@delete']);
+$router->get('api/profileattribute', ['uses' => 'ProfileAttributeController@readAll']);
+$router->get('api/profileattribute/{id:\d+}', ['uses' => 'ProfileAttributeController@read']);
+$router->post('api/profileattribute', ['middleware' => 'auth', 'uses' => 'ProfileAttributeController@create']);
+$router->put('api/profileattribute/{id:\d+}', ['middleware' => 'auth', 'uses' => 'ProfileAttributeController@update']);
+$router->delete('api/profileattribute/{id:\d+}', ['middleware' => 'auth', 'uses' => 'ProfileAttributeController@delete']);

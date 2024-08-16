@@ -2,9 +2,10 @@
 
 namespace Tests\Controllers;
 
-use Tests\BaseTestCase;
+use Tests\TestCase;
 
-class ProfileControllerTest extends BaseTestCase
+
+class ProfileControllerTest extends TestCase
 {
     /** @test */
     public function test_that_base_endpoint_returns_a_successful_response()

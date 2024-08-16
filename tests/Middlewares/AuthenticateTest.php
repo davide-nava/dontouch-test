@@ -2,9 +2,9 @@
 
 namespace Tests\Middlewares;
 
-use Tests\BaseTestCase;
+use Tests\TestCase;
 
-class AuthenticateTest extends BaseTestCase
+class AuthenticateTest extends TestCase
 {
     /** @test */
     public function test_that_base_endpoint_returns_a_successful_response()

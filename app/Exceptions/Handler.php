@@ -43,12 +43,15 @@ class Handler extends ExceptionHandler
      *
      * @param \Illuminate\Http\Request $request
      * @param \Throwable $exception
-     * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
      *
      * @throws \Throwable
      */
     public function render($request, Throwable $exception)
     {
+        if ($exception->getStatusCode() == 404) {
+            return response()->json(['message' => __('messages.notFound'), 'data' => null], 404);
+        }
+
         return response()->json(['message' => $exception->getMessage(), 'data' => null], 500);
     }
 }

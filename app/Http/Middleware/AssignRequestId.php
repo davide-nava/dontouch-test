@@ -16,8 +16,6 @@ class AssignRequestId
 
         Log::shareContext([
             'request-id' => $requestId,
-            'baseUrl' => $request->baseUrl,
-            'method' => $request->method,
         ]);
 
         return $next($request);

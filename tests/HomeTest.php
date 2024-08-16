@@ -2,13 +2,13 @@
 
 namespace Tests;
 
-class HomeTest extends BaseTestCase
+class HomeTest extends TestCase
 {
     /** @test */
-    public function root_endpoint_return_200()
+    public function test_root_endpoint_return_200()
     {
         $this->get('/');
 
-        $this->assertResponseStatus(200);
+        $this->assertResponseOk();
     }
 }

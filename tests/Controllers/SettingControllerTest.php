@@ -2,9 +2,9 @@
 
 namespace Tests\Controllers;
 
-use Tests\BaseTestCase;
+use Tests\TestCase;
 
-class SettingControllerTest extends BaseTestCase
+class SettingControllerTest extends TestCase
 {
     /** @test */
     public function test_that_base_endpoint_returns_a_successful_response()

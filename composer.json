@@ -1,32 +1,28 @@
 {
-    "version": "1.0.0",
-    "name": "davide-nava/donthouch-test",
-    "description": "Test api profiles.",
-    "keywords": [
-        "framework",
-        "laravel",
-        "lumen"
-    ],
-    "authors": [
-        {
-            "name": "Davide Nava",
-            "email": "davidenava85@gmail.com"
-        }
-    ],
+    "name": "laravel/lumen",
+    "description": "The Laravel Lumen Framework.",
+    "keywords": ["framework", "laravel", "lumen"],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": "^8.0",
         "doctrine/annotations": "^2.0",
+        "illuminate/support": "^9.52",
         "laravel/lumen-framework": "^9.0",
+        "laravel/tinker": "^2.9",
+        "league/commonmark": "^2.5",
         "monolog/monolog": "^2.9",
-        "predis/predis": "^2.2",
-        "tymon/jwt-auth": "*",
-        "zircote/swagger-php": "*"
+        "symfony/uid": "^7.1",
+        "tymon/jwt-auth": "^2.1",
+        "zircote/swagger-php": "^4.10"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "laravel/dusk": "^7.13",
+        "laravel/pint": "^1.17",
+        "laravel/sail": "^1.31",
         "mockery/mockery": "^1.4.4",
+        "phpunit/php-code-coverage": "^9.2",
         "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {

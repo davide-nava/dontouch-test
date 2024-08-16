@@ -2,83 +2,18 @@
 
 namespace Tests\Services;
 
-use App\Repositories\ProfileRepositoryInterface;
 use App\Services\ProfileService;
-use Tests\BaseTestCase;
-use Mockery\MockInterface;
+use Tests\TestCase;
 
-class ProfileServiceTest extends BaseTestCase
+class ProfileServiceTest extends TestCase
 {
-    /** @test */
-    public function create()
-    {
-        $this->get('/');
-
-        $this->assertEquals(
-            $this->app->version(),
-            $this->response->getContent()
-        );
-    }
 
     /** @test */
     public function clearPrefix()
     {
-        $mock = $this->mock(ProfileRepositoryInterface::class, function (MockInterface $mock) {
-            $mock->shouldReceive('process')->once();
-        });
+        $number = ProfileService::clearPrefix("+393333333333");
 
-        $mock->
-        $service = new ProfileService();
-
-        $this->get('/');
-
-        $this->assertEquals(
-            $this->app->version(),
-            $this->response->getContent()
-        );
+        $this->assertNotContains('+39', [$number]);
     }
 
-    /** @test */
-    public function update()
-    {
-        $this->get('/');
-
-        $this->assertEquals(
-            $this->app->version(),
-            $this->response->getContent()
-        );
-    }
-
-    /** @test */
-    public function delete()
-    {
-        $this->get('/');
-
-        $this->assertEquals(
-            $this->app->version(),
-            $this->response->getContent()
-        );
-    }
-
-    /** @test */
-    public function all()
-    {
-        $this->get('/');
-
-        $this->assertEquals(
-            $this->app->version(),
-            $this->response->getContent()
-        );
-    }
-
-    /** @test */
-    public function find()
-    {
-        $this->get('/');
-
-        $this->assertEquals(
-            $this->app->version(),
-            $this->response->getContent()
-        );
-    }
 }

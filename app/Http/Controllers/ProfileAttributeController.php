@@ -18,7 +18,7 @@ class ProfileAttributeController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/profile-attribute",
+     *     path="/api/profileattribute",
      *     summary="Get all profile attributes",
      *     @OA\Response(response="200", description="Ok"),
      *     @OA\Response(response="404", description="Not Found"),
@@ -45,7 +45,7 @@ class ProfileAttributeController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/profile-attribute/{id}",
+     *     path="/api/profileattribute/{id}",
      *     summary="Get profile attribute",
      *     @OA\Response(response="200", description="Ok"),
      *     @OA\Response(response="400", description="Bad Request"),
@@ -93,7 +93,7 @@ class ProfileAttributeController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/profile-attribute/{id}",
+     *     path="/api/profileattribute/{id}",
      *     summary="Create profile attribute",
      *     @OA\Response(response="200", description="Ok"),
      *     @OA\Response(response="400", description="Bad Request"),
@@ -134,7 +134,7 @@ class ProfileAttributeController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/api/profile-attribute/{id}",
+     *     path="/api/profileattribute/{id}",
      *     summary="Update profile attribute",
      *     @OA\Response(response="200", description="Ok"),
      *     @OA\Response(response="400", description="Bad Request"),
@@ -183,7 +183,7 @@ class ProfileAttributeController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/api/profile-attribute/{id}",
+     *     path="/api/profileattribute/{id}",
      *     summary="Delete profile attribute",
      *     @OA\Response(response="200", description="Ok"),
      *     @OA\Response(response="400", description="Bad Request"),
