@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . '@example.com',
+            'name' => 'Test User',
+            'email' => 'test@example.com',
             'password' => Hash::make('password'),
         ]);
 
@@ -80,6 +80,5 @@ class DatabaseSeeder extends Seeder
             'data_di_creazione' => '01/01/2021',
             'data_di_modifica' => '01/01/2021',
         ]);
-
     }
 }

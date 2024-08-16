@@ -6,7 +6,6 @@ use App\Events\AccessOperationEvent;
 use App\Services\ProfileAttributeService;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;

@@ -16,29 +16,17 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^8.3",
-        "darkaonline/l5-swagger": "^8.6",
+        "php": "^8.0",
         "doctrine/annotations": "^2.0",
-        "illuminate/collections": "9.*",
-        "illuminate/contracts": "9.*",
-        "illuminate/filesystem": "9.*",
-        "illuminate/macroable": "9.*",
-        "illuminate/support": "9.*",
-        "illuminate/translation": "9.*",
-        "laravel/lumen-framework": "9.*",
-        "laravel/ui": "^4.5",
-        "monolog/monolog": "*",
-        "nextapps/laravel-swagger-ui": "^0.10.1",
-        "predis/predis": "^2.2",
+        "laravel/lumen-framework": "^9.0",
+        "monolog/monolog": "^2.9",
         "tymon/jwt-auth": "*",
         "zircote/swagger-php": "*"
     },
     "require-dev": {
-        "brianium/paratest": "^6.11",
         "fakerphp/faker": "^1.9.1",
-        "laravel/dusk": "^7.13",
         "mockery/mockery": "^1.4.4",
-        "phpunit/phpunit": "^9.6"
+        "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
         "psr-4": {

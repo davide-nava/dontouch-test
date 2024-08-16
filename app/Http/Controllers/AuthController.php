@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Events\AccessOperationEvent;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Validator;

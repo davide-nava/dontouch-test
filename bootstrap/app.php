@@ -63,6 +63,8 @@ $app->configure('database');
 |
 */
 $app->middleware([App\Http\Middleware\AccessOperation::class]);
+$app->middleware([App\Http\Middleware\Language::class]);
+$app->middleware([App\Http\Middleware\AssignRequestId::class]);
 
 $app->routeMiddleware(['auth' => App\Http\Middleware\Authenticate::class,]);
 

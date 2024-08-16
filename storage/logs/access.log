@@ -1,4 +1,1 @@
-[2024-08-14T17:16:48.143790+00:00] AccessOperation.INFO: ProfileController@create [] []
-[2024-08-14T20:07:09.515214+00:00] AccessOperation.INFO: ProfileController@readAll [] []
-[2024-08-14T20:10:02.966721+00:00] AccessOperation.INFO: ProfileController@readAll [] []
-[2024-08-14T20:10:23.479812+00:00] AccessOperation.INFO: ProfileController@readAll [] []
+[2024-08-16T10:39:38.134199+00:00] AccessOperation.INFO: ProfileController@readAll [] []

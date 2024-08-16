@@ -7,22 +7,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProfileAttribute extends Model
 {
+    use SoftDeletes;
 
     protected $table = 'profile_attributes';
     protected $primaryKey = 'id';
-
     public $incrementing = true;
-    public $autoincrement = true;
 
-    use SoftDeletes;
-
-    protected $dates = ['deleted_at'];
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var string[]
-     */
     protected $fillable = [
         'id',
         'profile_id',
@@ -32,13 +22,16 @@ class ProfileAttribute extends Model
         'deleted_at',
     ];
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var string[]
-     */
     protected $hidden = [
         'deleted_at',
     ];
 
+    protected function casts(): array
+    {
+        return [
+            'data_di_creazione' => 'datetime',
+            'data_di_modifica' => 'datetime',
+            'deleted_at' => 'datetime',
+        ];
+    }
 }
