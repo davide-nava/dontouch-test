@@ -7,13 +7,18 @@ use Tests\TestCase;
 class AuthControllerTest extends TestCase
 {
     /** @test */
-    public function test_that_base_endpoint_returns_a_successful_response()
+    public function test_login_return_ok()
     {
-        $this->get('/');
+        $this->post('/api/auth/login', ["email"=> "test@example.com", "password"=> "password"]);
 
-        $this->assertEquals(
-            $this->app->version(),
-            $this->response->getContent()
-        );
+        $this->assertResponseOk();
+    }
+
+    /** @test */
+    public function test_login_wrong_password_return_ok()
+    {
+        $this->post('/api/auth/login', ["email"=> "test@example.com", "password"=> "password22"]);
+
+        $this->assertResponseStatus(401);
     }
 }

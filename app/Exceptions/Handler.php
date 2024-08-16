@@ -48,10 +48,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        if ($exception->getStatusCode() == 404) {
+        if ($exception && $exception->getStatusCode() == 404) {
             return response()->json(['message' => __('messages.notFound'), 'data' => null], 404);
         }
 
-        return response()->json(['message' => $exception->getMessage(), 'data' => null], 500);
+        return response()->json(['message' => $exception->getMessage() ?? '', 'data' => null], 500);
     }
 }

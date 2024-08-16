@@ -16,6 +16,7 @@ class AuthController extends Controller
 {
     public function __construct()
     {
+
     }
 
     /**
@@ -47,7 +48,7 @@ class AuthController extends Controller
             } else {
                 $credentials = $request->only(['email', 'password']);
 
-                if (!$token = Auth::setTTL(7200)->attempt($credentials)) {
+                if (!$token = Auth::attempt($credentials)) {
                     return response()->json(['message' => __('messages.unauthorized')], 401);
                 }
 

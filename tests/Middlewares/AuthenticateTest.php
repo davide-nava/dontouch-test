@@ -7,13 +7,18 @@ use Tests\TestCase;
 class AuthenticateTest extends TestCase
 {
     /** @test */
-    public function test_that_base_endpoint_returns_a_successful_response()
+    public function test_get_endpoint_return_ok()
     {
-        $this->get('/');
+        $this->get('/api/profile');
 
-        $this->assertEquals(
-            $this->app->version(),
-            $this->response->getContent()
-        );
+        $this->assertResponseOk();
+    }
+
+    /** @test */
+    public function test_post_endpoint_return_401()
+    {
+        $this->delete('/api/profile/1');
+
+        $this->assertResponseStatus(401);
     }
 }
