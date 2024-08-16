@@ -24,3 +24,7 @@
 [2024-08-16T20:38:23.837546+00:00] AccessOperation.INFO: AuthController@login [] []
 [2024-08-16T20:39:02.016686+00:00] AccessOperation.INFO: AuthController@login [] []
 [2024-08-16T20:39:03.577449+00:00] AccessOperation.INFO: AuthController@login [] []
+[2024-08-16T20:52:09.962015+00:00] AccessOperation.INFO: Home [] []
+[2024-08-16T20:54:17.549505+00:00] AccessOperation.INFO: Home [] []
+[2024-08-16T20:59:44.439797+00:00] AccessOperation.INFO: Home [] []
+[2024-08-16T21:00:04.843002+00:00] AccessOperation.INFO: Home [] []

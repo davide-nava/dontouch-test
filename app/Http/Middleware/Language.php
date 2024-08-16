@@ -23,10 +23,8 @@ class Language
 
         if (in_array($locale, ['en', 'it'])) {
             App::setLocale($locale);
-            app('translator')->setLocale($locale);
         } else {
             App::setLocale($locale);
-            app('translator')->setLocale('en');
         }
 
         return $next($request);

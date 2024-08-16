@@ -69,3 +69,7 @@
 [2024-08-16T20:38:23.811209+00:00] AccessOperation.INFO: http://localhost/api/auth/login [] []
 [2024-08-16T20:39:01.994146+00:00] AccessOperation.INFO: http://localhost/api/auth/login [] []
 [2024-08-16T20:39:03.555748+00:00] AccessOperation.INFO: http://localhost/api/auth/login [] []
+[2024-08-16T20:52:09.922783+00:00] AccessOperation.INFO: http://localhost:8888 [] []
+[2024-08-16T20:54:17.516965+00:00] AccessOperation.INFO: http://localhost:8888 [] []
+[2024-08-16T20:59:44.408949+00:00] AccessOperation.INFO: http://localhost:8888 [] []
+[2024-08-16T21:00:04.827306+00:00] AccessOperation.INFO: http://localhost:8888 [] []

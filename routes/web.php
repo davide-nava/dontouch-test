@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Event;
 $router->get('/', function () use ($router) {
     Event::dispatch(new AccessOperationEvent('Home'));
 
-    return   __('messages.welcome');
+    return __('messages.welcome');
 });
 
 $router->get('/version', function () use ($router) {

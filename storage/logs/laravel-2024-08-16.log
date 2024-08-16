@@ -276,3 +276,331 @@
 [2024-08-16 20:38:23] testing.DEBUG: Login user {user} {password} {"request-id":"825f2968-b5d6-4616-9518-49dc3a5bf720","user":"test@example.com","password":"password22"} 
 [2024-08-16 20:39:02] testing.DEBUG: Login user {user} {password} {"request-id":"63b31a87-1562-47e3-bf75-b9e2f599f448","user":"test@example.com","password":"password22"} 
 [2024-08-16 20:39:03] testing.DEBUG: Login user {user} {password} {"request-id":"adaa39c9-989f-497f-907a-0b393b7f49b1","user":"test@example.com","password":"password"} 
+[2024-08-16 20:54:17] local.ERROR: Undefined variable $translator {"request-id":"6e266ffe-83c7-4129-b2e8-cbfddc9f3ab0","exception":"[object] (ErrorException(code: 0): Undefined variable $translator at C:\\DEV\\dontouch-test\\routes\\web.php:23)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'Undefined varia...', 'C:\\\\DEV\\\\dontouch...', 23)
+#1 C:\\DEV\\dontouch-test\\routes\\web.php(23): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'Undefined varia...', 'C:\\\\DEV\\\\dontouch...', 23)
+#2 C:\\DEV\\dontouch-test\\vendor\\illuminate\\container\\BoundMethod.php(36): Closure->{closure}()
+#3 C:\\DEV\\dontouch-test\\vendor\\illuminate\\container\\Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\DEV\\dontouch-test\\vendor\\illuminate\\container\\BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#5 C:\\DEV\\dontouch-test\\vendor\\illuminate\\container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Object(Closure), Object(Closure))
+#6 C:\\DEV\\dontouch-test\\vendor\\illuminate\\container\\Container.php(661): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Object(Closure), Array, NULL)
+#7 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(304): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#8 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(269): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#9 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#10 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#11 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AssignRequestId.php(21): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#12 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AssignRequestId->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#13 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#14 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\Language.php(32): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#15 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\Language->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#16 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#17 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AccessOperation.php(22): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#18 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AccessOperation->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#19 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#20 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#21 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#22 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#23 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#24 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#25 {main}
+"} 
+[2024-08-16 20:54:17] local.ERROR: Call to undefined method ErrorException::getStatusCode() {"request-id":"6e266ffe-83c7-4129-b2e8-cbfddc9f3ab0","exception":"[object] (Error(code: 0): Call to undefined method ErrorException::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(ErrorException))
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(50): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(ErrorException))
+#2 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AssignRequestId.php(21): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AssignRequestId->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#4 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#5 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\Language.php(32): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#6 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\Language->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#7 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#8 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AccessOperation.php(22): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#9 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AccessOperation->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#10 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#11 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#12 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#13 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#14 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#15 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#16 {main}
+"} 
+[2024-08-16 20:54:17] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"6e266ffe-83c7-4129-b2e8-cbfddc9f3ab0","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(185): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#2 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\Language.php(32): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#4 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\Language->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#5 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#6 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AccessOperation.php(22): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#7 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AccessOperation->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#8 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#9 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#10 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#11 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#12 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#13 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#14 {main}
+"} 
+[2024-08-16 20:54:17] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"6e266ffe-83c7-4129-b2e8-cbfddc9f3ab0","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(32): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#2 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\Language.php(32): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\Language->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#4 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#5 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AccessOperation.php(22): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#6 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AccessOperation->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#7 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#8 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#9 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#10 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#12 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#13 {main}
+"} 
+[2024-08-16 20:54:17] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"6e266ffe-83c7-4129-b2e8-cbfddc9f3ab0","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(185): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#2 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AccessOperation.php(22): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#4 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AccessOperation->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#5 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#6 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#7 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#8 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#9 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#10 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#11 {main}
+"} 
+[2024-08-16 20:54:17] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"6e266ffe-83c7-4129-b2e8-cbfddc9f3ab0","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(32): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#2 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AccessOperation.php(22): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AccessOperation->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#4 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#5 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#6 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#7 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#8 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#9 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#10 {main}
+"} 
+[2024-08-16 20:54:17] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"6e266ffe-83c7-4129-b2e8-cbfddc9f3ab0","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(185): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#2 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#4 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#5 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#6 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#7 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#8 {main}
+"} 
+[2024-08-16 20:54:17] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"6e266ffe-83c7-4129-b2e8-cbfddc9f3ab0","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(32): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#2 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#4 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#5 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#6 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#7 {main}
+"} 
+[2024-08-16 20:54:17] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"6e266ffe-83c7-4129-b2e8-cbfddc9f3ab0","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(187): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(179): Laravel\\Lumen\\Application->sendExceptionToHandler(Object(Error))
+#2 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#3 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#4 {main}
+"} 
+[2024-08-16 20:54:17] local.ERROR: Uncaught Error: Call to undefined method Error::getStatusCode() in C:\DEV\dontouch-test\app\Exceptions\Handler.php:51
+Stack trace:
+#0 C:\DEV\dontouch-test\vendor\laravel\lumen-framework\src\Concerns\RegistersExceptionHandlers.php(205): App\Exceptions\Handler->render(Object(Laravel\Lumen\Http\Request), Object(Error))
+#1 C:\DEV\dontouch-test\vendor\laravel\lumen-framework\src\Concerns\RegistersExceptionHandlers.php(51): Laravel\Lumen\Application->handleException(Object(Error))
+#2 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Error))
+#3 {main}
+  thrown {"request-id":"6e266ffe-83c7-4129-b2e8-cbfddc9f3ab0","exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught Error: Call to undefined method Error::getStatusCode() in C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51
+Stack trace:
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(205): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(51): Laravel\\Lumen\\Application->handleException(Object(Error))
+#2 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Error))
+#3 {main}
+  thrown at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(150): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct(message: ''Uncaught Error...', code: '0', error: '['type' => 1, '...', traceOffset: '0', traceArgs: '???', trace: '???')
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(137): Laravel\\Lumen\\Application->fatalErrorFromPhpError(error: '['type' => 1, '...', traceOffset: '0')
+#2 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(55): Laravel\\Lumen\\Application->handleShutdown()
+#3 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(0): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure:C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php:54-56}()
+#4 {main}
+"} 
+[2024-08-16 20:59:44] local.ERROR: Undefined variable $translator {"request-id":"90d13193-1818-4b96-81d1-27c40029c7b1","exception":"[object] (ErrorException(code: 0): Undefined variable $translator at C:\\DEV\\dontouch-test\\routes\\web.php:23)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'Undefined varia...', 'C:\\\\DEV\\\\dontouch...', 23)
+#1 C:\\DEV\\dontouch-test\\routes\\web.php(23): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'Undefined varia...', 'C:\\\\DEV\\\\dontouch...', 23)
+#2 C:\\DEV\\dontouch-test\\vendor\\illuminate\\container\\BoundMethod.php(36): Closure->{closure}()
+#3 C:\\DEV\\dontouch-test\\vendor\\illuminate\\container\\Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\DEV\\dontouch-test\\vendor\\illuminate\\container\\BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#5 C:\\DEV\\dontouch-test\\vendor\\illuminate\\container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Object(Closure), Object(Closure))
+#6 C:\\DEV\\dontouch-test\\vendor\\illuminate\\container\\Container.php(661): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Object(Closure), Array, NULL)
+#7 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(304): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#8 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(269): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#9 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#10 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#11 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AssignRequestId.php(21): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#12 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AssignRequestId->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#13 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#14 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\Language.php(32): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#15 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\Language->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#16 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#17 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AccessOperation.php(22): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#18 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AccessOperation->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#19 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#20 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#21 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#22 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#23 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#24 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#25 {main}
+"} 
+[2024-08-16 20:59:44] local.ERROR: Call to undefined method ErrorException::getStatusCode() {"request-id":"90d13193-1818-4b96-81d1-27c40029c7b1","exception":"[object] (Error(code: 0): Call to undefined method ErrorException::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(ErrorException))
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(50): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(ErrorException))
+#2 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AssignRequestId.php(21): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AssignRequestId->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#4 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#5 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\Language.php(32): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#6 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\Language->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#7 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#8 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AccessOperation.php(22): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#9 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AccessOperation->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#10 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#11 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#12 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#13 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#14 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#15 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#16 {main}
+"} 
+[2024-08-16 20:59:44] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"90d13193-1818-4b96-81d1-27c40029c7b1","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(185): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#2 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\Language.php(32): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#4 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\Language->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#5 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#6 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AccessOperation.php(22): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#7 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AccessOperation->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#8 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#9 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#10 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#11 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#12 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#13 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#14 {main}
+"} 
+[2024-08-16 20:59:44] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"90d13193-1818-4b96-81d1-27c40029c7b1","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(32): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#2 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\Language.php(32): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\Language->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#4 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#5 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AccessOperation.php(22): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#6 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AccessOperation->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#7 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#8 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#9 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#10 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#12 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#13 {main}
+"} 
+[2024-08-16 20:59:44] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"90d13193-1818-4b96-81d1-27c40029c7b1","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(185): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#2 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AccessOperation.php(22): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#4 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AccessOperation->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#5 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#6 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#7 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#8 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#9 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#10 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#11 {main}
+"} 
+[2024-08-16 20:59:44] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"90d13193-1818-4b96-81d1-27c40029c7b1","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(32): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#2 C:\\DEV\\dontouch-test\\app\\Http\\Middleware\\AccessOperation.php(22): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(180): App\\Http\\Middleware\\AccessOperation->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#4 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#5 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#6 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#7 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#8 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#9 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#10 {main}
+"} 
+[2024-08-16 20:59:44] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"90d13193-1818-4b96-81d1-27c40029c7b1","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(185): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#2 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#4 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#5 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#6 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#7 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#8 {main}
+"} 
+[2024-08-16 20:59:44] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"90d13193-1818-4b96-81d1-27c40029c7b1","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(72): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(32): Laravel\\Lumen\\Routing\\Pipeline->handleException(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#2 C:\\DEV\\dontouch-test\\vendor\\illuminate\\pipeline\\Pipeline.php(116): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#3 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(428): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#4 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(167): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#5 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#6 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#7 {main}
+"} 
+[2024-08-16 20:59:44] local.ERROR: Call to undefined method Error::getStatusCode() {"request-id":"90d13193-1818-4b96-81d1-27c40029c7b1","exception":"[object] (Error(code: 0): Call to undefined method Error::getStatusCode() at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(187): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(179): Laravel\\Lumen\\Application->sendExceptionToHandler(Object(Error))
+#2 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#3 C:\\DEV\\dontouch-test\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#4 {main}
+"} 
+[2024-08-16 20:59:44] local.ERROR: Uncaught Error: Call to undefined method Error::getStatusCode() in C:\DEV\dontouch-test\app\Exceptions\Handler.php:51
+Stack trace:
+#0 C:\DEV\dontouch-test\vendor\laravel\lumen-framework\src\Concerns\RegistersExceptionHandlers.php(205): App\Exceptions\Handler->render(Object(Laravel\Lumen\Http\Request), Object(Error))
+#1 C:\DEV\dontouch-test\vendor\laravel\lumen-framework\src\Concerns\RegistersExceptionHandlers.php(51): Laravel\Lumen\Application->handleException(Object(Error))
+#2 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Error))
+#3 {main}
+  thrown {"request-id":"90d13193-1818-4b96-81d1-27c40029c7b1","exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught Error: Call to undefined method Error::getStatusCode() in C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51
+Stack trace:
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(205): App\\Exceptions\\Handler->render(Object(Laravel\\Lumen\\Http\\Request), Object(Error))
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(51): Laravel\\Lumen\\Application->handleException(Object(Error))
+#2 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Error))
+#3 {main}
+  thrown at C:\\DEV\\dontouch-test\\app\\Exceptions\\Handler.php:51)
+[stacktrace]
+#0 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(150): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct(message: ''Uncaught Error...', code: '0', error: '['type' => 1, '...', traceOffset: '0', traceArgs: '???', trace: '???')
+#1 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(137): Laravel\\Lumen\\Application->fatalErrorFromPhpError(error: '['type' => 1, '...', traceOffset: '0')
+#2 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(55): Laravel\\Lumen\\Application->handleShutdown()
+#3 C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(0): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure:C:\\DEV\\dontouch-test\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php:54-56}()
+#4 {main}
+"} 
