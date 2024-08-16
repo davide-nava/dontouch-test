@@ -23,6 +23,8 @@ class AuthController extends Controller
      *     path="/api/auth/login",
      *     summary="Login user",
      *     @OA\Response(response="200", description="Ok"),
+     *     @OA\Response(response="400", description="Bad request"),
+     *     @OA\Response(response="401", description="Unauthorized"),
      *     @OA\Response(response="404", description="Not Found"),
      *     @OA\Response(response="500", description="Error message")
      * )
@@ -46,11 +48,11 @@ class AuthController extends Controller
                 $credentials = $request->only(['email', 'password']);
 
                 if (!$token = Auth::setTTL(7200)->attempt($credentials)) {
-                    return response()->json(['message' => 'Unauthorized'], 401);
+                    return response()->json(['message' => __('messages.unauthorized')], 401);
                 }
 
                 return response()->json([
-                    'message' => 'OK',
+                    'message' => __('messages.ok'),
                     'data' => [
                         'userid' => Auth::user()->id,
                         'username' => Auth::user()->name,
@@ -70,7 +72,6 @@ class AuthController extends Controller
      *     path="/api/auth/logout",
      *     summary="Logout user",
      *     @OA\Response(response="200", description="Ok"),
-     *     @OA\Response(response="404", description="Not Found"),
      *     @OA\Response(response="500", description="Error message")
      * )
      */
@@ -79,9 +80,9 @@ class AuthController extends Controller
         try {
             $token = auth()->tokenById(Auth::user()->userid);
 
-            auth()->logout(true);
+            auth()->logout();
 
-            return response()->json(['message' => 'OK', 'data' => null]);
+            return response()->json(['message' => __('messages.ok'), 'data' => null]);
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage(), 'data' => null], 500);
         }

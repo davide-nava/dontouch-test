@@ -34,9 +34,9 @@ class ProfileAttributeController extends Controller
             Log::debug('Reading all profile attributes ');
 
             if ($profileAttributes) {
-                return response()->json(['message' => 'OK', 'data' => $profileAttributes]);
+                return response()->json(['message' => __('messages.ok'), 'data' => $profileAttributes]);
             } else {
-                return response()->json(['message' => 'Not Found', 'data' => null], 404);
+                return response()->json(['message' => __('messages.notFound'), 'data' => null], 404);
             }
         } catch (Exception $e) {
             return response()->json(['message' => $e->getMessage(), 'data' => null], 500);
@@ -61,14 +61,14 @@ class ProfileAttributeController extends Controller
             Log::debug('Reading profile attribute with id: {id} ', ['id' => $id]);
 
             if ($id == null || $id <= 0) {
-                return response()->json(['message' => 'Bad Request', 'data' => null], 400);
+                return response()->json(['message' => __('messages.badRequest'), 'data' => null], 400);
             } else {
                 $profileAttribute = $this->profileAttributeService->find($id);
 
                 if ($profileAttribute) {
-                    return response()->json(['message' => 'OK', 'data' => $profileAttribute]);
+                    return response()->json(['message' => __('messages.ok'), 'data' => $profileAttribute]);
                 } else {
-                    return response()->json(['message' => 'Not Found', 'data' => null], 404);
+                    return response()->json(['message' => __('messages.notFound'), 'data' => null], 404);
                 }
             }
         } catch (Exception $e) {
@@ -124,7 +124,7 @@ class ProfileAttributeController extends Controller
                 $data = $this->validateRequest($request->all(), false);
 
                 $this->profileAttributeService->create($data);
-                return response()->json(['message' => 'OK', 'data' => $data], 201);
+                return response()->json(['message' => __('messages.ok'), 'data' => $data], 201);
             }
         } catch (Exception $e) {
             Log::error('Error: \nMessage: {message}\nTrace: {trace}\nFile: {file}\nLine: {line}', ['message' => $e->getMessage(), "trace" => $e->getTraceAsString(), "file" => $e->getFile(), "line" => $e->getLine()]);
@@ -170,9 +170,9 @@ class ProfileAttributeController extends Controller
 
                     $profileAttribute = $this->profileAttributeService->find($data['profile_id'], $data['attribute']);
 
-                    return response()->json(['message' => 'OK', 'data' => $profileAttribute]);
+                    return response()->json(['message' => __('messages.ok'), 'data' => $profileAttribute]);
                 } else {
-                    return response()->json(['message' => 'Not Found', 'data' => null], 404);
+                    return response()->json(['message' => __('messages.notFound'), 'data' => null], 404);
                 }
             }
         } catch (Exception $e) {
@@ -199,13 +199,13 @@ class ProfileAttributeController extends Controller
             Log::debug('Delete profile attribute {id}', ['id' => $id]);
 
             if ($id == null || $id <= 0) {
-                return response()->json(['message' => 'Bad Request', 'data' => null], 400);
+                return response()->json(['message' => __('messages.badRequest'), 'data' => null], 400);
             } else {
 
                 if ($this->profileAttributeService->delete($id)) {
-                    return response()->json(['message' => 'OK', 'data' => null]);
+                    return response()->json(['message' => __('messages.ok'), 'data' => null]);
                 } else {
-                    return response()->json(['message' => 'Not Found', 'data' => null], 404);
+                    return response()->json(['message' => __('messages.notFound'), 'data' => null], 404);
                 }
             }
         } catch (Exception $e) {

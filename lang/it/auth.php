@@ -16,7 +16,7 @@ return [
 
 
     'failed' => 'Queste credenziali non corrispondono ai nostri archivi.',
-    'password' => 'La password fornita è errata.',
+    'password' => 'La password fornita Ã¨ errata.',
     'throttle' => 'Troppi tentativi di accesso. Riprova tra :seconds secondi.',
 
 ];

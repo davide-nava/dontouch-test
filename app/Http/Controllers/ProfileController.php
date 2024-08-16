@@ -34,9 +34,9 @@ class ProfileController extends Controller
             $profiles = $this->profileService->all();
 
             if ($profiles) {
-                return response()->json(['message' => 'OK', 'data' => $profiles], 200);
+                return response()->json(['message' => __('messages.ok'), 'data' => $profiles], 200);
             } else {
-                return response()->json(['message' => 'Not Found', 'data' => null], 404);
+                return response()->json(['message' => __('messages.notFound'), 'data' => null], 404);
             }
         } catch (Exception $e) {
             Log::error('Error: \nMessage: {message}\nTrace: {trace}\nFile: {file}\nLine: {line}', ['message' => $e->getMessage(), "trace" => $e->getTraceAsString(), "file" => $e->getFile(), "line" => $e->getLine()]);
@@ -62,14 +62,14 @@ class ProfileController extends Controller
             Log::debug('Read profile {id}', ['id' => $id]);
 
             if ($id == null || $id <= 0) {
-                return response()->json(['message' => 'Bad Request', 'data' => null], 400);
+                return response()->json(['message' => __('messages.badRequest'), 'data' => null], 400);
             } else {
                 $profile = $this->profileService->find($id);
 
                 if ($profile) {
-                    return response()->json(['message' => 'OK', 'data' => $profile], 200);
+                    return response()->json(['message' => __('messages.ok'), 'data' => $profile], 200);
                 } else {
-                    return response()->json(['message' => 'Not Found', 'data' => null], 404);
+                    return response()->json(['message' => __('messages.notFound'), 'data' => null], 404);
                 }
             }
         } catch (Exception $e) {
@@ -110,7 +110,7 @@ class ProfileController extends Controller
 
                 $this->profileService->create($data);
 
-                return response()->json(['message' => 'OK', 'data' => $data], 201);
+                return response()->json(['message' => __('messages.ok'), 'data' => $data], 201);
             }
         } catch (Exception $e) {
             Log::error('Error: \nMessage: {message}\nTrace: {trace}\nFile: {file}\nLine: {line}', ['message' => $e->getMessage(), "trace" => $e->getTraceAsString(), "file" => $e->getFile(), "line" => $e->getLine()]);
@@ -174,9 +174,9 @@ class ProfileController extends Controller
 
                     $profile = $this->profileService->find($data['id']);
 
-                    return response()->json(['message' => 'OK', 'data' => $profile], 200);
+                    return response()->json(['message' => __('messages.ok'), 'data' => $profile], 200);
                 } else {
-                    return response()->json(['message' => 'Not Found', 'data' => null], 404);
+                    return response()->json(['message' => __('messages.notFound'), 'data' => null], 404);
                 }
             }
         } catch (Exception $e) {
@@ -203,13 +203,13 @@ class ProfileController extends Controller
             Log::debug('Delete profile {id}', ['id' => $id]);
 
             if ($id == null || $id <= 0) {
-                return response()->json(['message' => 'Bad Request', 'data' => null], 400);
+                return response()->json(['message' => __('messages.badRequest'), 'data' => null], 400);
             } else {
 
                 if ($this->profileService->delete($id)) {
-                    return response()->json(['message' => 'OK', 'data' => null], 200);
+                    return response()->json(['message' => __('messages.ok'), 'data' => null], 200);
                 } else {
-                    return response()->json(['message' => 'Not Found', 'data' => null], 404);
+                    return response()->json(['message' => __('messages.notFound'), 'data' => null], 404);
                 }
             }
         } catch (Exception $e) {

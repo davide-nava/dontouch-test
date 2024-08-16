@@ -27,8 +27,9 @@ class AccessOperationListener
      */
     public function handle(AccessOperationEvent $event)
     {
+        $path = dirname(__DIR__, 1) . '\storage\logs\access.log';
         $log = new Logger('AccessOperation');
-        $log->pushHandler(new StreamHandler(__DIR__ . '/../../storage/logs/access.log'));
+        $log->pushHandler(new StreamHandler($path));
 
         $log->info($event->operation);
     }
