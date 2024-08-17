@@ -26,7 +26,7 @@ class ProfileRepository implements ProfileRepositoryInterface
     public function delete($id)
     {
         $profile = Profile::withTrashed()->findOrFail($id);
-        $profile->softDeletes();
+      return  $profile->delete();
     }
 
     public function find($id)

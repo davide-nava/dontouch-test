@@ -26,7 +26,7 @@ class ProfileAttributeRepository implements ProfileAttributeRepositoryInterface
     public function delete($id)
     {
         $profileAttribute = ProfileAttribute::withTrashed()->findOrFail($id);
-        $profileAttribute->softDeletes();
+        return $profileAttribute->delete();
     }
 
     public function find($id)

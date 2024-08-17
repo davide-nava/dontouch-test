@@ -2,17 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProfileAttribute extends Model
 {
-    use HasFactory, SoftDeletes;
+    use SoftDeletes;
 
     protected $table = 'profile_attributes';
     protected $primaryKey = 'id';
     public $incrementing = true;
+    public $timestamps = false;
 
     protected $fillable = [
         'id',
@@ -24,8 +24,6 @@ class ProfileAttribute extends Model
 
     protected $hidden = [
         'deleted_at',
-        'update_at',
-        'created_at',
     ];
 
     protected function casts(): array
@@ -34,8 +32,6 @@ class ProfileAttribute extends Model
             'data_di_creazione' => 'datetime',
             'data_di_modifica' => 'datetime',
             'deleted_at' => 'datetime',
-            'update_at' => 'datetime',
-            'created_at' => 'datetime',
         ];
     }
 }

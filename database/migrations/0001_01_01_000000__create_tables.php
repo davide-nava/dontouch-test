@@ -89,8 +89,7 @@ return new class extends Migration {
             $table->string('numero_di_telefono');
             $table->timestamp('data_di_creazione');
             $table->timestamp('data_di_modifica');
-            $table->softDeletes('deleted_at', precision: 0);
-            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('profile_attributes', function (Blueprint $table) {
@@ -99,9 +98,8 @@ return new class extends Migration {
             $table->string('attribute');
             $table->timestamp('data_di_creazione');
             $table->timestamp('data_di_modifica');
-            $table->softDeletes('deleted_at', precision: 0);
+            $table->softDeletes();
             $table->unique(['profile_id', 'attribute']);
-            $table->timestamps();
         });
     }
 

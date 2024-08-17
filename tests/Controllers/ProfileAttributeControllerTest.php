@@ -46,7 +46,7 @@ class ProfileAttributeControllerTest extends TestCase
     {
         $this->post('/api/auth/login', ["email"=> "test@example.com", "password"=> "password"]);
 
-        $this->post('/api/profileattribute', ['attribute' => Str::random(10), 'profile_id' => '1', 'data_di_creazione' => Date::now(), 'data_di_modifica' => Date::now()]);
+        $this->post('/api/profileattribute', ['attribute' => Str::random(10), 'profile_id' => 1, 'data_di_creazione' => Date::now(), 'data_di_modifica' => Date::now()]);
 
         $this->assertResponseStatus(201);
     }
@@ -56,7 +56,7 @@ class ProfileAttributeControllerTest extends TestCase
     {
         $this->post('/api/auth/login', ["email"=> "test@example.com", "password"=> "password"]);
 
-        $this->put('/api/profileattribute', ['attribute' => Str::random(10), 'profile_id' => '1', 'data_di_creazione' => Date::now(), 'data_di_modifica' => Date::now(), 'id' => '1']);
+        $this->put('/api/profileattribute/1', ['attribute' => Str::random(20), 'profile_id' => 1, 'data_di_creazione' => Date::now(), 'data_di_modifica' => Date::now(), 'id' => '1']);
 
         $this->assertResponseOk();
     }
