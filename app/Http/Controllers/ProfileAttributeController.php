@@ -109,7 +109,7 @@ class ProfileAttributeController extends Controller
             Log::debug('Create profile attribute {req}', ['req' => $request]);
 
             $validator = Validator::make($request->all(), [
-                'profile_id' => 'required|number',
+                'profile_id' => 'required|numeric',
                 'attribute' => 'required|string',
                 'data_di_creazione' => 'required|date',
                 'data_di_modifica' => 'required|date',
@@ -150,7 +150,7 @@ class ProfileAttributeController extends Controller
             Log::debug('Update profile attribute {req}', ['req' => $request]);
 
             $validator = Validator::make($request->all(), [
-                'profile_id' => 'required|number',
+                'profile_id' => 'required|numeric',
                 'attribute' => 'required|string',
                 'data_di_creazione' => 'required|date',
                 'data_di_modifica' => 'required|date',
