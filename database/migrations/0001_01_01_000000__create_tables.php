@@ -90,6 +90,7 @@ return new class extends Migration {
             $table->timestamp('data_di_creazione');
             $table->timestamp('data_di_modifica');
             $table->softDeletes('deleted_at', precision: 0);
+            $table->timestamps();
         });
 
         Schema::create('profile_attributes', function (Blueprint $table) {
@@ -100,6 +101,7 @@ return new class extends Migration {
             $table->timestamp('data_di_modifica');
             $table->softDeletes('deleted_at', precision: 0);
             $table->unique(['profile_id', 'attribute']);
+            $table->timestamps();
         });
     }
 
